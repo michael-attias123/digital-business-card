@@ -1,34 +1,34 @@
 /* ==========================================================================
-   כרטיס ביקור דיגיטלי — מיכאל אטיאס
    Digital business card — Michael Attias
 
-   כל העיצוב מרוכז בקובץ החיצוני הזה. אין ולו שורת עיצוב אחת בתוך ה-HTML,
-   ואין שום שימוש ב-JavaScript: מצב כהה והחלפת שפה ממומשים כולם ב-CSS
-   באמצעות תיבות סימון מוסתרות וסלקטור האחים הכללי (~).
+   Every visual decision lives in this one external file. There is not a single
+   styling declaration inside the HTML, and no JavaScript anywhere on the site:
+   the dark mode and the language switch are both built from hidden form
+   controls plus the CSS general sibling combinator (~).
 
-   תוכן עניינים
-   01. איפוס ובסיס
-   02. משתני עיצוב — מצב בהיר ומצב כהה
-   03. מנגנון הדו-לשוניות
-   04. כלי עזר
-   05. סרגל עליון, ניווט ומתגים
-   06. רכיבים חוזרים (כפתורים, כרטיסים, תגיות)
-   07. כרטיס הביקור (Hero) ונתונים מספריים
-   08. מבנה כללי של מקטע
-   09. עליי
-   10. כישורים
-   11. פרויקטים
-   12. ציר זמן
-   13. יצירת קשר
-   14. כותרת תחתונה
-   15. תנועה ואנימציה
-   16. רספונסיביות
-   17. העדפות נגישות והדפסה
+   Contents
+   01. Reset and base
+   02. Design tokens — light mode and dark mode
+   03. The bilingual machinery
+   04. Utilities
+   05. Top bar, navigation and switches
+   06. Reusable components (buttons, cards, tags)
+   07. The business card (hero) and the stats strip
+   08. Generic section layout
+   09. About
+   10. Skills
+   11. Projects
+   12. Timeline
+   13. Contact
+   14. Footer
+   15. Motion
+   16. Responsive rules
+   17. Accessibility preferences and print
    ========================================================================== */
 
 
 /* ==========================================================================
-   01. איפוס ובסיס
+   01. Reset and base
    ========================================================================== */
 
 *,
@@ -49,7 +49,8 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* גם השוליים שמעבר לגוף העמוד (גלילת "גומי" במובייל) מקבלים את צבע הרקע הנכון */
+/* The area beyond the document body — rubber-band scrolling on mobile — has
+   to pick up the right background colour as well */
 html:has(#theme-switch:checked) {
   color-scheme: dark;
   background: #080b17;
@@ -88,15 +89,15 @@ p {
 
 
 /* ==========================================================================
-   02. משתני עיצוב — מצב בהיר (ברירת מחדל) ומצב כהה
+   02. Design tokens — light mode (the default) and dark mode
    ========================================================================== */
 
 .page {
-  /* טיפוגרפיה */
+  /* Typography */
   --font-sans: "Heebo", "Assistant", "Segoe UI", "Arial Hebrew", system-ui, -apple-system, Arial, sans-serif;
   --font-mono: "JetBrains Mono", Consolas, "SF Mono", "Courier New", monospace;
 
-  /* מידות */
+  /* Metrics */
   --maxw: 68rem;
   --gutter: clamp(1rem, 4vw, 2rem);
   --r-sm: 0.6rem;
@@ -104,44 +105,45 @@ p {
   --r-lg: 1.5rem;
   --anchor-offset: 6.5rem;
 
-  /* צבעי מותג */
+  /* Brand colour */
   --brand-1: #4f46e5;
   --brand-2: #7c3aed;
   --brand-soft: rgba(79, 70, 229, 0.11);
   --ring: rgba(79, 70, 229, 0.4);
 
-  /* גוון קבוע למשטחים שנושאים טקסט לבן (כפתורים, לוגו, ידית המתג).
-     הוא אינו מתבהר במצב כהה, כדי שהניגודיות מול הלבן תישאר מעל 4.5:1. */
+  /* A fixed tint for the surfaces that carry white text: buttons, the logo and
+     the switch thumb. It deliberately does not lighten in dark mode, so the
+     contrast against white stays above 4.5:1. */
   --btn-1: #4f46e5;
   --btn-2: #7c3aed;
 
-  /* משטחים */
+  /* Surfaces */
   --bg: #f2f4fb;
   --bg-elev: #ffffff;
   --bg-sunk: #eaedf7;
   --line: #e0e4f0;
 
-  /* טקסט */
+  /* Text */
   --fg: #2f3545;
   --fg-strong: #10131d;
   --fg-muted: #5f687e;
   --accent-fg: #4338ca;
   --on-brand: #ffffff;
 
-  /* מצבים */
+  /* States */
   --ok: #15803d;
   --ok-soft: rgba(21, 128, 61, 0.12);
 
-  /* זוהר רקע */
+  /* Background glow */
   --glow-1: rgba(99, 102, 241, 0.2);
   --glow-2: rgba(168, 85, 247, 0.14);
 
-  /* צללים */
+  /* Shadows */
   --shadow-sm: 0 1px 2px rgba(16, 19, 29, 0.05), 0 2px 6px rgba(16, 19, 29, 0.04);
   --shadow-md: 0 6px 20px rgba(16, 19, 29, 0.08);
   --shadow-lg: 0 18px 48px rgba(16, 19, 29, 0.12);
 
-  /* סרגל עליון שקוף למחצה */
+  /* Translucent top bar */
   --topbar-bg: rgba(255, 255, 255, 0.82);
 
   color-scheme: light;
@@ -157,7 +159,7 @@ p {
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-/* ---- מצב כהה: מופעל על ידי תיבת הסימון שמעל ‎.page‎ ---- */
+/* ---- Dark mode: switched on by the checkbox that sits above .page ---- */
 #theme-switch:checked ~ .page {
   --brand-1: #818cf8;
   --brand-2: #c084fc;
@@ -197,9 +199,10 @@ p {
 
 
 /* ==========================================================================
-   03. מנגנון הדו-לשוניות
-   כל טקסט קיים בעמוד פעמיים — פעם בעברית ופעם באנגלית. כפתורי הרדיו
-   קובעים איזו גרסה מוצגת, ובמקביל מחליפים את כיוון הכתיבה של כל העמוד.
+   03. The bilingual machinery
+   Every string exists twice on the page, once in Hebrew and once in English.
+   The radio buttons decide which copy is shown and, at the same time, flip the
+   writing direction of the whole document.
    ========================================================================== */
 
 .en {
@@ -220,10 +223,10 @@ p {
 
 
 /* ==========================================================================
-   04. כלי עזר
+   04. Utilities
    ========================================================================== */
 
-/* תיבות הסימון עצמן: בלתי נראות, אך עדיין ניתנות למיקוד במקלדת */
+/* The controls themselves: invisible, yet still focusable from the keyboard */
 .switch {
   position: absolute;
   inset-block-start: 0;
@@ -236,7 +239,7 @@ p {
   white-space: nowrap;
 }
 
-/* ספריית האייקונים אינה אמורה להיראות, רק לשמש כמאגר ל-<use> */
+/* The icon library is never meant to be seen, only referenced through <use> */
 .sprite {
   position: absolute;
   inline-size: 0;
@@ -286,7 +289,7 @@ p {
   transform: translateY(0);
 }
 
-/* מיקוד אחיד ונראה לכל האתר */
+/* One consistent focus ring for the whole site */
 a:focus-visible,
 label:focus-visible,
 summary:focus-visible {
@@ -304,7 +307,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   05. סרגל עליון, ניווט ומתגים
+   05. Top bar, navigation and switches
    ========================================================================== */
 
 .topbar {
@@ -328,7 +331,7 @@ summary:focus-visible {
   gap: 0.5rem 1rem;
 }
 
-/* --- לוגו --- */
+/* --- Logo --- */
 
 .brand {
   display: inline-flex;
@@ -357,7 +360,7 @@ summary:focus-visible {
   letter-spacing: -0.01em;
 }
 
-/* --- ניווט --- */
+/* --- Navigation --- */
 
 .nav {
   order: 3;
@@ -389,7 +392,7 @@ summary:focus-visible {
   color: var(--accent-fg);
 }
 
-/* --- אזור המתגים --- */
+/* --- Switch area --- */
 
 .controls {
   margin-inline-start: auto;
@@ -398,7 +401,7 @@ summary:focus-visible {
   gap: 0.5rem;
 }
 
-/* מתג שפה */
+/* Language switch */
 
 .seg {
   position: relative;
@@ -445,7 +448,7 @@ summary:focus-visible {
   color: var(--accent-fg);
 }
 
-/* מתג מצב כהה / בהיר */
+/* Dark / light switch */
 
 .theme {
   position: relative;
@@ -503,7 +506,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   06. רכיבים חוזרים
+   06. Reusable components
    ========================================================================== */
 
 .card {
@@ -623,7 +626,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   07. כרטיס הביקור (Hero)
+   07. The business card (hero)
    ========================================================================== */
 
 .hero {
@@ -670,7 +673,8 @@ summary:focus-visible {
   gap: 0.4rem;
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
-  /* רקע אטום ולא שקוף: התג יושב על גבי התמונה, ושקיפות הייתה פוגעת בקריאוּת */
+  /* Opaque rather than translucent: the badge sits on top of the photo, and
+     any transparency made the label hard to read. */
   background: var(--bg-elev);
   border: 1px solid var(--ok);
   color: var(--ok);
@@ -747,7 +751,7 @@ summary:focus-visible {
   margin-block-start: 0.35rem;
 }
 
-/* --- רצועת הנתונים --- */
+/* --- Stats strip --- */
 
 .stats {
   display: grid;
@@ -786,7 +790,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   08. מבנה כללי של מקטע
+   08. Generic section layout
    ========================================================================== */
 
 .section {
@@ -841,7 +845,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   09. עליי
+   09. About
    ========================================================================== */
 
 .about {
@@ -905,7 +909,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   10. כישורים
+   10. Skills
    ========================================================================== */
 
 .skills {
@@ -987,7 +991,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   11. פרויקטים
+   11. Projects
    ========================================================================== */
 
 .projects {
@@ -1091,8 +1095,9 @@ summary:focus-visible {
   content: "";
   inline-size: 0.42rem;
   block-size: 0.42rem;
-  /* חץ שמצביע כלפי מטה: כאן דווקא לא משתמשים בתכונות לוגיות, כי "למטה"
-     זהה בשני כיווני הכתיבה ובעברית border-inline-end היה הופך אותו לחץ שמאלה. */
+  /* A chevron pointing down. Logical properties are deliberately avoided here:
+     "down" is the same in both writing directions, and border-inline-end would
+     turn this into a left-pointing arrow once the page flips to RTL. */
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
@@ -1110,7 +1115,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   12. ציר זמן
+   12. Timeline
    ========================================================================== */
 
 .tl {
@@ -1185,7 +1190,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   13. יצירת קשר
+   13. Contact
    ========================================================================== */
 
 .contact {
@@ -1246,7 +1251,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   14. כותרת תחתונה
+   14. Footer
    ========================================================================== */
 
 .footer {
@@ -1301,7 +1306,7 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   15. תנועה ואנימציה
+   15. Motion
    ========================================================================== */
 
 @keyframes fade-up {
@@ -1324,10 +1329,11 @@ summary:focus-visible {
     animation: fade-up 0.7s 0.12s cubic-bezier(0.2, 0.7, 0.3, 1) both;
   }
 
-  /* אנימציה מונעת-גלילה: נתמכת בדפדפנים חדשים בלבד, ולכן עטופה ב-@supports
-     כדי שבדפדפן שאינו תומך המקטעים פשוט יוצגו כרגיל.
-     נעשה כאן שימוש בתכונות הארוכות ולא בקיצור ‎animation‎, משום שהקיצור היה
-     מאפס את משך האנימציה ל-0 ומנטרל את הקישור לציר הגלילה. */
+  /* Scroll-driven animation: only newer browsers support it, so it is wrapped
+     in @supports and every other browser simply renders the sections as usual.
+     The longhand properties are used rather than the `animation` shorthand,
+     because the shorthand would reset the duration to 0 and disconnect the
+     animation from the scroll timeline. */
   @supports (animation-timeline: view()) {
     .reveal {
       animation-name: fade-up;
@@ -1342,11 +1348,12 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   16. רספונסיביות
-   העיצוב נבנה מובייל-תחילה. להלן ההתאמות למסכים גדולים יותר.
+   16. Responsive rules
+   The design is built mobile-first; what follows are the adjustments for
+   progressively larger screens.
    ========================================================================== */
 
-/* טלפונים צרים במיוחד */
+/* Very narrow phones */
 @media (max-width: 22.5rem) {
   .brand__text {
     display: none;
@@ -1357,7 +1364,7 @@ summary:focus-visible {
   }
 }
 
-/* טאבלט קטן ומעלה */
+/* Small tablets and up */
 @media (min-width: 36rem) {
   .stats {
     grid-template-columns: repeat(3, 1fr);
@@ -1374,7 +1381,7 @@ summary:focus-visible {
   }
 }
 
-/* שולחן עבודה: הסרגל העליון הופך לשורה אחת וכרטיס הביקור לשני טורים */
+/* Desktop: the top bar collapses into one row and the hero becomes two columns */
 @media (min-width: 52rem) {
   .page {
     --anchor-offset: 5rem;
@@ -1425,7 +1432,7 @@ summary:focus-visible {
   }
 }
 
-/* מסכים רחבים */
+/* Wide screens */
 @media (min-width: 75rem) {
   .page {
     font-size: 1.02rem;
@@ -1438,10 +1445,10 @@ summary:focus-visible {
 
 
 /* ==========================================================================
-   17. העדפות נגישות והדפסה
+   17. Accessibility preferences and print
    ========================================================================== */
 
-/* משתמש שביקש לצמצם תנועה — מקבל עמוד סטטי לחלוטין */
+/* A visitor who asked for reduced motion gets a completely still page */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1457,7 +1464,7 @@ summary:focus-visible {
   }
 }
 
-/* ניגודיות גבוהה */
+/* High contrast */
 @media (prefers-contrast: more) {
   .page {
     --fg-muted: var(--fg);
@@ -1465,7 +1472,7 @@ summary:focus-visible {
   }
 }
 
-/* גרסת הדפסה נקייה — הכרטיס הופך לקורות חיים על נייר */
+/* A clean print version — the card turns into a resume on white paper */
 @media print {
   .topbar,
   .skip-link,
@@ -1519,7 +1526,7 @@ summary:focus-visible {
     color: #000000;
   }
 
-  /* בגרסה המודפסת מציגים את כתובת היעד לצד כל קישור חיצוני */
+  /* In print, show the destination of every external link next to it */
   .contact__card::after {
     content: " (" attr(href) ")";
     display: block;

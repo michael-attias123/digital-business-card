@@ -30,18 +30,20 @@
 
 <!--
   ============================================================================
-  מתגי המצב — HTML + CSS בלבד, ללא JavaScript.
-  שלושת ה-input האלה הם "הזיכרון" של העמוד: הם יושבים לפני ‎.page‎ כדי שנוכל
-  להגיב למצב שלהם ב-CSS דרך סלקטור האחים הכללי (‎:checked ~ .page‎).
-    • theme-switch  — מצב בהיר / מצב כהה
-    • lang-he / lang-en — עברית / אנגלית (רדיו, כי זו בחירה ולא הדלקה)
+  The state switches — HTML and CSS only, no JavaScript.
+  These three inputs are the memory of the page. They sit before .page so the
+  stylesheet can react to their state through the general sibling combinator
+  (:checked ~ .page).
+    * theme-switch       - light mode / dark mode
+    * lang-he / lang-en  - Hebrew / English (radios, because this is a choice
+                           between two options rather than an on/off toggle)
   ============================================================================
 -->
 <input class="switch" type="checkbox" id="theme-switch">
 <input class="switch" type="radio" name="site-lang" id="lang-he" checked>
 <input class="switch" type="radio" name="site-lang" id="lang-en">
 
-<!-- ספריית האייקונים: מוגדרת פעם אחת ונשלפת דרך <use> לאורך העמוד -->
+<!-- Icon library: defined once here and pulled in with <use> across the page -->
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -100,7 +102,7 @@
     <span class="he">דילוג לתוכן הראשי</span><span class="en" lang="en">Skip to main content</span>
   </a>
 
-  <!-- ===================== סרגל עליון ===================== -->
+  <!-- ===================== Top bar ===================== -->
   <header class="topbar">
     <div class="topbar__inner">
 
@@ -123,7 +125,7 @@
 
       <div class="controls">
 
-        <!-- מתג שפה (שני כפתורים, רדיו) -->
+        <!-- Language switch (two buttons, radio inputs) -->
         <div class="seg">
           <span class="seg__thumb" aria-hidden="true"></span>
           <label class="seg__btn seg__btn--he" for="lang-he">
@@ -138,7 +140,7 @@
           </label>
         </div>
 
-        <!-- מתג מצב כהה / בהיר -->
+        <!-- Dark / light switch -->
         <label class="theme" for="theme-switch">
           <span class="theme__icon theme__icon--sun" aria-hidden="true"><svg class="icon"><use href="#i-sun"></use></svg></span>
           <span class="theme__icon theme__icon--moon" aria-hidden="true"><svg class="icon"><use href="#i-moon"></use></svg></span>
@@ -153,7 +155,7 @@
 
   <main id="main">
 
-    <!-- ===================== כרטיס הביקור ===================== -->
+    <!-- ===================== The business card ===================== -->
     <section class="hero" id="top" aria-labelledby="hero-name">
       <div class="container">
        <div class="hero__card">
@@ -245,7 +247,7 @@
       </div>
     </section>
 
-    <!-- ===================== עליי ===================== -->
+    <!-- ===================== About ===================== -->
     <section class="section reveal" id="about" aria-labelledby="about-title">
       <div class="container">
         <p class="section__kicker"><span class="he">01 · הכירו אותי</span><span class="en" lang="en">01 · Get to know me</span></p>
@@ -289,7 +291,7 @@
       </div>
     </section>
 
-    <!-- ===================== כישורים ===================== -->
+    <!-- ===================== Skills ===================== -->
     <section class="section section--alt reveal" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <p class="section__kicker"><span class="he">02 · ארגז הכלים</span><span class="en" lang="en">02 · The toolbox</span></p>
@@ -409,7 +411,7 @@
       </div>
     </section>
 
-    <!-- ===================== פרויקטים ===================== -->
+    <!-- ===================== Projects ===================== -->
     <section class="section reveal" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <p class="section__kicker"><span class="he">03 · מה בניתי</span><span class="en" lang="en">03 · What I've built</span></p>
@@ -501,7 +503,7 @@
       </div>
     </section>
 
-    <!-- ===================== ציר זמן ===================== -->
+    <!-- ===================== Timeline ===================== -->
     <section class="section section--alt reveal" id="timeline" aria-labelledby="timeline-title">
       <div class="container">
         <p class="section__kicker"><span class="he">04 · איך הגעתי לכאן</span><span class="en" lang="en">04 · How I got here</span></p>
@@ -585,7 +587,7 @@
       </div>
     </section>
 
-    <!-- ===================== יצירת קשר ===================== -->
+    <!-- ===================== Contact ===================== -->
     <section class="section reveal" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <p class="section__kicker"><span class="he">05 · נשמח לדבר</span><span class="en" lang="en">05 · Let's talk</span></p>
@@ -631,7 +633,7 @@
 
   </main>
 
-  <!-- ===================== כותרת תחתונה ===================== -->
+  <!-- ===================== Footer ===================== -->
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__copy">
