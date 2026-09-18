@@ -1277,12 +1277,6 @@ summary:focus-visible {
   gap: 0.3rem;
 }
 
-.footer__built {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
 .footer__top {
   margin-inline-start: auto;
 }
