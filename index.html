@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מיכאל אטיאס · Michael Attias — כרטיס ביקור דיגיטלי</title>
+
+  <meta name="description" content="כרטיס הביקור הדיגיטלי של מיכאל אטיאס — סטודנט למדעי המחשב ומהנדס DevOps, מתמחה בתשתיות ענן ולמידה עמוקה. The digital business card of Michael Attias, Computer Science student and DevOps engineer.">
+  <meta name="author" content="Michael Attias">
+  <meta name="keywords" content="DevOps, Cloud, Deep Learning, Kubernetes, Terraform, Python, Computer Science, מיכאל אטיאס">
+  <meta name="theme-color" content="#4f46e5">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="מיכאל אטיאס · Michael Attias — כרטיס ביקור דיגיטלי">
+  <meta property="og:description" content="סטודנט למדעי המחשב ומהנדס DevOps · תשתיות ענן, אוטומציה ולמידה עמוקה.">
+  <meta property="og:url" content="https://michael-attias123.github.io/digital-business-card/">
+  <meta property="og:image" content="https://michael-attias123.github.io/digital-business-card/assets/avatar.svg">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://michael-attias123.github.io/digital-business-card/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!--
+  ============================================================================
+  מתגי המצב — HTML + CSS בלבד, ללא JavaScript.
+  שלושת ה-input האלה הם "הזיכרון" של העמוד: הם יושבים לפני ‎.page‎ כדי שנוכל
+  להגיב למצב שלהם ב-CSS דרך סלקטור האחים הכללי (‎:checked ~ .page‎).
+    • theme-switch  — מצב בהיר / מצב כהה
+    • lang-he / lang-en — עברית / אנגלית (רדיו, כי זו בחירה ולא הדלקה)
+  ============================================================================
+-->
+<input class="switch" type="checkbox" id="theme-switch">
+<input class="switch" type="radio" name="site-lang" id="lang-he" checked>
+<input class="switch" type="radio" name="site-lang" id="lang-en">
+
+<!-- ספריית האייקונים: מוגדרת פעם אחת ונשלפת דרך <use> לאורך העמוד -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5.5" width="18" height="13" rx="2.5"/>
+      <path d="m3.8 8 7.3 5.1a1.5 1.5 0 0 0 1.8 0L20.2 8"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.2 5.2l1.4-2 3.8 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3.2 9h3.6v12H3.2zM9.4 9h3.45v1.64h.05a3.78 3.78 0 0 1 3.4-1.87c3.64 0 4.3 2.4 4.3 5.5V21h-3.6v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.4z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21.5s7-5.6 7-11.5a7 7 0 1 0-14 0c0 5.9 7 11.5 7 11.5z"/>
+      <circle cx="12" cy="10" r="2.6"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7"/><path d="M8.5 7H17v8.5"/>
+    </symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19.5V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.2v2.6M12 19.2v2.6M2.2 12h2.6M19.2 12h2.6M5 5l1.9 1.9M17.1 17.1 19 19M19 5l-1.9 1.9M6.9 17.1 5 19"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8z"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 18.5h10.2a4.25 4.25 0 0 0 .5-8.47A6.25 6.25 0 0 0 6.1 11.3 3.6 3.6 0 0 0 7 18.5z"/>
+    </symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.8 9.4a8.4 8.4 0 0 1 14.3-3.6l2 2"/><path d="M20.4 3.4v4.5h-4.5"/>
+      <path d="M20.2 14.6a8.4 8.4 0 0 1-14.3 3.6l-2-2"/><path d="M3.6 20.6v-4.5h4.5"/>
+    </symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9.6 3.8a3 3 0 0 0-3 3 2.85 2.85 0 0 0-1.5 5.1 3 3 0 0 0 1.7 5.4 3 3 0 0 0 5.2 2V5.9a2.9 2.9 0 0 0-2.4-2.1z"/>
+      <path d="M14.4 3.8a3 3 0 0 1 3 3 2.85 2.85 0 0 1 1.5 5.1 3 3 0 0 1-1.7 5.4 3 3 0 0 1-5.2 2"/>
+    </symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m8.5 7-5 5 5 5"/><path d="m15.5 7 5 5-5 5"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3.2 13.9 9l5.8 1.9-5.8 1.9L12 18.6l-1.9-5.8L4.3 10.9 10.1 9z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <a class="skip-link" href="#main">
+    <span class="he">דילוג לתוכן הראשי</span><span class="en" lang="en">Skip to main content</span>
+  </a>
+
+  <!-- ===================== סרגל עליון ===================== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true">MA</span>
+        <span class="brand__text">
+          <span class="he">מיכאל אטיאס</span><span class="en" lang="en">Michael Attias</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about"><span class="he">עליי</span><span class="en" lang="en">About</span></a></li>
+          <li><a class="nav__link" href="#skills"><span class="he">כישורים</span><span class="en" lang="en">Skills</span></a></li>
+          <li><a class="nav__link" href="#projects"><span class="he">פרויקטים</span><span class="en" lang="en">Projects</span></a></li>
+          <li><a class="nav__link" href="#timeline"><span class="he">מסלול</span><span class="en" lang="en">Journey</span></a></li>
+          <li><a class="nav__link" href="#contact"><span class="he">צור קשר</span><span class="en" lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+
+        <!-- מתג שפה (שני כפתורים, רדיו) -->
+        <div class="seg">
+          <span class="seg__thumb" aria-hidden="true"></span>
+          <label class="seg__btn seg__btn--he" for="lang-he">
+            <span aria-hidden="true">עב</span>
+            <span class="sr-only he">הצג את האתר בעברית</span>
+            <span class="sr-only en" lang="en">Show the site in Hebrew</span>
+          </label>
+          <label class="seg__btn seg__btn--en" for="lang-en">
+            <span aria-hidden="true">EN</span>
+            <span class="sr-only he">הצג את האתר באנגלית</span>
+            <span class="sr-only en" lang="en">Show the site in English</span>
+          </label>
+        </div>
+
+        <!-- מתג מצב כהה / בהיר -->
+        <label class="theme" for="theme-switch">
+          <span class="theme__icon theme__icon--sun" aria-hidden="true"><svg class="icon"><use href="#i-sun"></use></svg></span>
+          <span class="theme__icon theme__icon--moon" aria-hidden="true"><svg class="icon"><use href="#i-moon"></use></svg></span>
+          <span class="theme__thumb" aria-hidden="true"></span>
+          <span class="sr-only he">החלפה בין מצב בהיר למצב כהה</span>
+          <span class="sr-only en" lang="en">Toggle between light and dark mode</span>
+        </label>
+
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== כרטיס הביקור ===================== -->
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="container">
+       <div class="hero__card">
+
+        <div class="hero__portrait">
+          <img class="hero__avatar"
+               src="assets/avatar.svg"
+               width="400" height="400"
+               alt="תמונת הפרופיל של מיכאל אטיאס / Profile picture of Michael Attias">
+          <span class="hero__badge">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="he">פתוח להצעות</span><span class="en" lang="en">Open to work</span>
+          </span>
+        </div>
+
+        <div class="hero__body">
+          <p class="hero__eyebrow">
+            <span class="he">כרטיס ביקור דיגיטלי</span><span class="en" lang="en">Digital business card</span>
+          </p>
+
+          <h1 class="hero__name" id="hero-name">
+            <span class="he">מיכאל אטיאס</span><span class="en" lang="en">Michael Attias</span>
+          </h1>
+
+          <p class="hero__role">
+            <span class="he">סטודנט למדעי המחשב · מהנדס DevOps</span>
+            <span class="en" lang="en">Computer Science Student · DevOps Engineer</span>
+          </p>
+
+          <p class="hero__tagline">
+            <span class="he">בונה תשתיות ענן ומערכות למידה עמוקה — מהפייפליין ועד המודל בפרודקשן.</span>
+            <span class="en" lang="en">Building cloud infrastructure and deep-learning systems — from the pipeline to the model in production.</span>
+          </p>
+
+          <p class="hero__meta">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+            <span class="he">ירושלים, ישראל</span><span class="en" lang="en">Jerusalem, Israel</span>
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contact">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <span class="he">דברו איתי</span><span class="en" lang="en">Get in touch</span>
+            </a>
+            <a class="btn btn--ghost" href="https://github.com/michael-attias123" target="_blank" rel="noopener noreferrer me">
+              <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+              <span>GitHub</span>
+            </a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/michael-attias" target="_blank" rel="noopener noreferrer me">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <ul class="hero__chips">
+            <li>
+              <a class="chip" href="mailto:michael@notreal.com">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+                <span dir="ltr">michael@notreal.com</span>
+              </a>
+            </li>
+            <li>
+              <a class="chip" href="tel:+972501234567">
+                <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+                <span dir="ltr">050-123-4567</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+       </div>
+      </div>
+
+      <div class="container">
+        <ul class="stats">
+          <li class="stat">
+            <span class="stat__num" dir="ltr">5+</span>
+            <span class="stat__label"><span class="he">שנות ניסיון ב-DevOps</span><span class="en" lang="en">Years in DevOps</span></span>
+          </li>
+          <li class="stat">
+            <span class="stat__num" dir="ltr">3</span>
+            <span class="stat__label"><span class="he">שנה בתואר מדעי המחשב</span><span class="en" lang="en">Year of my CS degree</span></span>
+          </li>
+          <li class="stat">
+            <span class="stat__num" dir="ltr">16</span>
+            <span class="stat__label"><span class="he">טכנולוגיות בארגז הכלים</span><span class="en" lang="en">Technologies in my toolkit</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== עליי ===================== -->
+    <section class="section reveal" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="section__kicker"><span class="he">01 · הכירו אותי</span><span class="en" lang="en">01 · Get to know me</span></p>
+        <h2 class="section__title" id="about-title">
+          <span class="he">עליי</span><span class="en" lang="en">About me</span>
+        </h2>
+
+        <div class="about">
+          <p class="about__text">
+            <span class="he">שמי מיכאל, סטודנט שנה ג' למדעי המחשב במכללה למנהל ומהנדס DevOps עם למעלה מחמש שנות ניסיון מעשי. ביום-יום אני בונה ומתחזק תשתיות ענן, צינורות CI/CD ואוטומציה שמקצרת פריסות מימים לדקות. בשנים האחרונות התחום שמרתק אותי במיוחד הוא למידה עמוקה, ואני עובד בדיוק על התפר שבין השניים: לקחת מודל שרץ במחברת Jupyter ולהפוך אותו לשירות יציב, מנוטר ומדיד שרץ בענן. בין הפרויקטים שבניתי — פלטפורמת MLOps מקצה לקצה, צינור עיבוד Big Data בזמן אמת, ותשתית ענן מלאה המנוהלת כקוד. אני מחפש תפקיד שמחבר בין הנדסת תשתיות ללמידת מכונה, ומאמין שקוד טוב הוא קוד שגם מישהו אחר יכול לתחזק.</span>
+            <span class="en" lang="en">I'm Michael, a third-year Computer Science student at the College of Management and a DevOps engineer with over five years of hands-on experience. Day to day I build and maintain cloud infrastructure, CI/CD pipelines and automation that cuts deployments from days to minutes. In recent years the field that fascinates me most is deep learning, and I work exactly at the seam between the two: taking a model that runs in a Jupyter notebook and turning it into a stable, monitored, measurable service in the cloud. Among the projects I've built — an end-to-end MLOps platform, a real-time big-data pipeline, and a full cloud infrastructure managed as code. I'm looking for a role that connects infrastructure engineering with machine learning, and I believe good code is code someone else can maintain too.</span>
+          </p>
+
+          <ul class="focus">
+            <li class="focus__item">
+              <span class="focus__icon" aria-hidden="true"><svg class="icon"><use href="#i-cloud"></use></svg></span>
+              <h3 class="focus__title"><span class="he">תשתיות ענן</span><span class="en" lang="en">Cloud infrastructure</span></h3>
+              <p class="focus__text">
+                <span class="he">תכנון והקמה של סביבות AWS מאובטחות ומדרגיות, מנוהלות כקוד מהיום הראשון.</span>
+                <span class="en" lang="en">Designing and building secure, scalable AWS environments, managed as code from day one.</span>
+              </p>
+            </li>
+            <li class="focus__item">
+              <span class="focus__icon" aria-hidden="true"><svg class="icon"><use href="#i-cycle"></use></svg></span>
+              <h3 class="focus__title"><span class="he">אוטומציה ו-CI/CD</span><span class="en" lang="en">Automation &amp; CI/CD</span></h3>
+              <p class="focus__text">
+                <span class="he">צינורות בנייה ופריסה אוטומטיים, בדיקות בכל commit והחזרה לאחור בלחיצה אחת.</span>
+                <span class="en" lang="en">Automated build and deploy pipelines, tests on every commit and one-click rollbacks.</span>
+              </p>
+            </li>
+            <li class="focus__item">
+              <span class="focus__icon" aria-hidden="true"><svg class="icon"><use href="#i-brain"></use></svg></span>
+              <h3 class="focus__title"><span class="he">למידה עמוקה</span><span class="en" lang="en">Deep learning</span></h3>
+              <p class="focus__text">
+                <span class="he">מהאימון ועד הפרודקשן: רשתות נוירונים, מעקב ניסויים והגשת מודלים בזמן אמת.</span>
+                <span class="en" lang="en">From training to production: neural networks, experiment tracking and real-time model serving.</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== כישורים ===================== -->
+    <section class="section section--alt reveal" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section__kicker"><span class="he">02 · ארגז הכלים</span><span class="en" lang="en">02 · The toolbox</span></p>
+        <h2 class="section__title" id="skills-title">
+          <span class="he">כישורים טכניים</span><span class="en" lang="en">Technical skills</span>
+        </h2>
+
+        <div class="skills">
+
+          <article class="card skillset">
+            <h3 class="skillset__title"><span class="he">שפות תכנות</span><span class="en" lang="en">Programming languages</span></h3>
+            <ul class="skillset__list">
+              <li class="skill">
+                <span class="skill__name" dir="ltr">Python</span>
+                <span class="skill__level"><span class="he">מומחה</span><span class="en" lang="en">Expert</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">Java</span>
+                <span class="skill__level"><span class="he">טוב</span><span class="en" lang="en">Intermediate</span></span>
+                <span class="meter meter--3" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">C</span>
+                <span class="skill__level"><span class="he">טוב</span><span class="en" lang="en">Intermediate</span></span>
+                <span class="meter meter--3" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card skillset">
+            <h3 class="skillset__title"><span class="he">פיתוח Web</span><span class="en" lang="en">Web development</span></h3>
+            <ul class="skillset__list">
+              <li class="skill">
+                <span class="skill__name" dir="ltr">HTML5</span>
+                <span class="skill__level"><span class="he">מתקדם</span><span class="en" lang="en">Advanced</span></span>
+                <span class="meter meter--4" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">CSS3</span>
+                <span class="skill__level"><span class="he">מתקדם</span><span class="en" lang="en">Advanced</span></span>
+                <span class="meter meter--4" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">JavaScript</span>
+                <span class="skill__level"><span class="he">טוב</span><span class="en" lang="en">Intermediate</span></span>
+                <span class="meter meter--3" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card skillset">
+            <h3 class="skillset__title"><span class="he">תשתיות וכלים</span><span class="en" lang="en">Infrastructure &amp; tools</span></h3>
+            <ul class="skillset__list">
+              <li class="skill">
+                <span class="skill__name" dir="ltr">Git</span>
+                <span class="skill__level"><span class="he">מומחה</span><span class="en" lang="en">Expert</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">Linux</span>
+                <span class="skill__level"><span class="he">מומחה</span><span class="en" lang="en">Expert</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">Docker</span>
+                <span class="skill__level"><span class="he">מומחה</span><span class="en" lang="en">Expert</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name" dir="ltr">SQL</span>
+                <span class="skill__level"><span class="he">מתקדם</span><span class="en" lang="en">Advanced</span></span>
+                <span class="meter meter--4" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card skillset">
+            <h3 class="skillset__title"><span class="he">שפות</span><span class="en" lang="en">Languages</span></h3>
+            <ul class="skillset__list">
+              <li class="skill">
+                <span class="skill__name"><span class="he">עברית</span><span class="en" lang="en">Hebrew</span></span>
+                <span class="skill__level"><span class="he">שפת אם</span><span class="en" lang="en">Native</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+              <li class="skill">
+                <span class="skill__name"><span class="he">אנגלית</span><span class="en" lang="en">English</span></span>
+                <span class="skill__level"><span class="he">שליטה מלאה</span><span class="en" lang="en">Fluent</span></span>
+                <span class="meter meter--5" aria-hidden="true"><span class="meter__fill"></span></span>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+
+        <h3 class="tags__title">
+          <span class="he">טכנולוגיות שאני עובד איתן</span><span class="en" lang="en">Technologies I work with</span>
+        </h3>
+        <ul class="tags">
+          <li class="tag">Kubernetes</li>
+          <li class="tag">Terraform</li>
+          <li class="tag">AWS</li>
+          <li class="tag">Jenkins</li>
+          <li class="tag">GitHub Actions</li>
+          <li class="tag">Ansible</li>
+          <li class="tag">Helm</li>
+          <li class="tag">Prometheus</li>
+          <li class="tag">Grafana</li>
+          <li class="tag">PyTorch</li>
+          <li class="tag">MLflow</li>
+          <li class="tag">Apache Kafka</li>
+          <li class="tag">Apache Spark</li>
+          <li class="tag">Airflow</li>
+          <li class="tag">PostgreSQL</li>
+          <li class="tag">Bash</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== פרויקטים ===================== -->
+    <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="section__kicker"><span class="he">03 · מה בניתי</span><span class="en" lang="en">03 · What I've built</span></p>
+        <h2 class="section__title" id="projects-title">
+          <span class="he">פרויקטים נבחרים</span><span class="en" lang="en">Selected projects</span>
+        </h2>
+        <p class="section__lead">
+          <span class="he">שלושה פרויקטים שמסכמים את מה שאני הכי אוהב לעשות: לחבר בין נתונים, תשתית ומודלים.</span>
+          <span class="en" lang="en">Three projects that sum up what I love doing most: connecting data, infrastructure and models.</span>
+        </p>
+
+        <div class="projects">
+
+          <article class="card project">
+            <span class="project__index" aria-hidden="true">01</span>
+            <span class="project__icon" aria-hidden="true"><svg class="icon"><use href="#i-brain"></use></svg></span>
+            <h3 class="project__title" dir="ltr">MLOps Pipeline</h3>
+            <p class="project__text">
+              <span class="he">פלטפורמה מקצה לקצה שלוקחת מודל מ-commit בגיט ועד שירות חי בענן — אימון, מעקב ניסויים, ניהול גרסאות והגשה אוטומטית.</span>
+              <span class="en" lang="en">An end-to-end platform that takes a model from a git commit to a live cloud service — training, experiment tracking, versioning and automated serving.</span>
+            </p>
+            <details class="project__more">
+              <summary><span class="he">מה מעניין בו</span><span class="en" lang="en">What makes it interesting</span></summary>
+              <ul class="bullets">
+                <li><span class="he">אימון אוטומטי בכל דחיפה לענף הראשי, עם השוואת מדדים מול המודל שכבר בפרודקשן.</span><span class="en" lang="en">Automatic training on every push to the main branch, comparing metrics against the model already in production.</span></li>
+                <li><span class="he">רישום גרסאות מודל ב-MLflow ופריסה הדרגתית מסוג Canary לאשכול Kubernetes.</span><span class="en" lang="en">Model version registry in MLflow and gradual canary rollouts to a Kubernetes cluster.</span></li>
+                <li><span class="he">ניטור סחיפה בנתונים עם התראה אוטומטית כשאיכות התחזיות יורדת.</span><span class="en" lang="en">Data-drift monitoring with automatic alerts when prediction quality drops.</span></li>
+              </ul>
+            </details>
+            <ul class="tags tags--sm">
+              <li class="tag">Python</li><li class="tag">PyTorch</li><li class="tag">MLflow</li>
+              <li class="tag">Docker</li><li class="tag">Kubernetes</li><li class="tag">GitHub Actions</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <span class="project__index" aria-hidden="true">02</span>
+            <span class="project__icon" aria-hidden="true"><svg class="icon"><use href="#i-cloud"></use></svg></span>
+            <h3 class="project__title" dir="ltr">Cloud Infrastructure as Code</h3>
+            <p class="project__text">
+              <span class="he">תשתית AWS שלמה שקמה בפקודה אחת: רשת, אשכול EKS, בסיסי נתונים וניטור — הכול מתואר בקוד ונשמר בגיט.</span>
+              <span class="en" lang="en">A complete AWS environment provisioned with a single command: networking, an EKS cluster, databases and monitoring — all described as code and kept in git.</span>
+            </p>
+            <details class="project__more">
+              <summary><span class="he">מה מעניין בו</span><span class="en" lang="en">What makes it interesting</span></summary>
+              <ul class="bullets">
+                <li><span class="he">הקמת סביבה חדשה (פיתוח, בדיקות או פרודקשן) בפחות מרבע שעה במקום יומיים.</span><span class="en" lang="en">Spinning up a new environment (dev, staging or production) in under fifteen minutes instead of two days.</span></li>
+                <li><span class="he">מודולים חוזרים ב-Terraform, עם תוכנית שינויים שעוברת בדיקה לפני כל החלה.</span><span class="en" lang="en">Reusable Terraform modules, with a change plan that is reviewed before every apply.</span></li>
+                <li><span class="he">לוחות ניטור ב-Grafana והתראות ב-Prometheus שנוצרים יחד עם הסביבה.</span><span class="en" lang="en">Grafana dashboards and Prometheus alerts created together with the environment itself.</span></li>
+              </ul>
+            </details>
+            <ul class="tags tags--sm">
+              <li class="tag">Terraform</li><li class="tag">AWS</li><li class="tag">EKS</li>
+              <li class="tag">Helm</li><li class="tag">Prometheus</li><li class="tag">Grafana</li>
+            </ul>
+          </article>
+
+          <article class="card project">
+            <span class="project__index" aria-hidden="true">03</span>
+            <span class="project__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"></use></svg></span>
+            <h3 class="project__title" dir="ltr">Real-Time Stream Analytics</h3>
+            <p class="project__text">
+              <span class="he">צינור עיבוד נתונים בזמן אמת שקולט מיליוני אירועים ביום, מנקה, מצרף ומזהה אנומליות תוך שניות.</span>
+              <span class="en" lang="en">A real-time data pipeline that ingests millions of events a day, then cleans, aggregates and detects anomalies within seconds.</span>
+            </p>
+            <details class="project__more">
+              <summary><span class="he">מה מעניין בו</span><span class="en" lang="en">What makes it interesting</span></summary>
+              <ul class="bullets">
+                <li><span class="he">קליטת אירועים ב-Kafka ועיבוד חלונות זמן ב-Spark Structured Streaming.</span><span class="en" lang="en">Event ingestion through Kafka and time-window processing in Spark Structured Streaming.</span></li>
+                <li><span class="he">תזמון וניהול תלויות של משימות ה-ETL באמצעות Airflow, כולל ניסיון חוזר אוטומטי.</span><span class="en" lang="en">Scheduling and dependency management for the ETL jobs with Airflow, including automatic retries.</span></li>
+                <li><span class="he">זיהוי אנומליות סטטיסטי שמתריע על חריגות לפני שהן מגיעות למשתמשים.</span><span class="en" lang="en">Statistical anomaly detection that raises a flag before irregularities reach users.</span></li>
+              </ul>
+            </details>
+            <ul class="tags tags--sm">
+              <li class="tag">Apache Kafka</li><li class="tag">Apache Spark</li><li class="tag">Airflow</li>
+              <li class="tag">Python</li><li class="tag">PostgreSQL</li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="projects__cta">
+          <a class="btn btn--ghost" href="https://github.com/michael-attias123" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+            <span class="he">כל הקוד שלי ב-GitHub</span><span class="en" lang="en">All my code on GitHub</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== ציר זמן ===================== -->
+    <section class="section section--alt reveal" id="timeline" aria-labelledby="timeline-title">
+      <div class="container">
+        <p class="section__kicker"><span class="he">04 · איך הגעתי לכאן</span><span class="en" lang="en">04 · How I got here</span></p>
+        <h2 class="section__title" id="timeline-title">
+          <span class="he">השכלה וניסיון</span><span class="en" lang="en">Education &amp; experience</span>
+        </h2>
+
+        <ol class="tl">
+
+          <li class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <span class="tl__year" dir="ltr">2019 – 2021</span>
+            <h3 class="tl__title">
+              <span class="he">שירות צבאי — מנהל מערכות Linux</span>
+              <span class="en" lang="en">Military service — Linux systems administrator</span>
+            </h3>
+            <p class="tl__org"><span class="he">יחידה טכנולוגית</span><span class="en" lang="en">Technology unit</span></p>
+            <p class="tl__text">
+              <span class="he">ניהול ותחזוקה של שרתי Linux, וכתיבת סקריפטים שהפכו משימות תפעול ידניות לתהליך אוטומטי.</span>
+              <span class="en" lang="en">Managing and maintaining Linux servers, and writing scripts that turned manual operational tasks into an automated process.</span>
+            </p>
+          </li>
+
+          <li class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <span class="tl__year" dir="ltr">2021 – 2023</span>
+            <h3 class="tl__title">
+              <span class="he">מהנדס DevOps — סטארט-אפ</span>
+              <span class="en" lang="en">DevOps engineer — startup</span>
+            </h3>
+            <p class="tl__org"><span class="he">חברת תוכנה בתחום ה-SaaS</span><span class="en" lang="en">SaaS software company</span></p>
+            <p class="tl__text">
+              <span class="he">בניית צינורות ה-CI/CD הראשונים בארגון, מעבר מלא לקונטיינרים והקמת סביבות בדיקה שנוצרות אוטומטית לכל Pull Request.</span>
+              <span class="en" lang="en">Built the organization's first CI/CD pipelines, led a full move to containers and set up test environments created automatically for every pull request.</span>
+            </p>
+          </li>
+
+          <li class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <span class="tl__year" dir="ltr">2023</span>
+            <h3 class="tl__title">
+              <span class="he">תחילת תואר במדעי המחשב</span>
+              <span class="en" lang="en">Started a B.Sc. in Computer Science</span>
+            </h3>
+            <p class="tl__org"><span class="he">המכללה למנהל</span><span class="en" lang="en">The College of Management</span></p>
+            <p class="tl__text">
+              <span class="he">התחלת לימודים במקביל לעבודה מלאה, עם דגש על אלגוריתמים, מבני נתונים ומתמטיקה.</span>
+              <span class="en" lang="en">Began studying alongside a full-time job, focusing on algorithms, data structures and mathematics.</span>
+            </p>
+          </li>
+
+          <li class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <span class="tl__year" dir="ltr">2023 – <span class="he">היום</span><span class="en" lang="en">Present</span></span>
+            <h3 class="tl__title">
+              <span class="he">מהנדס DevOps בכיר</span>
+              <span class="en" lang="en">Senior DevOps engineer</span>
+            </h3>
+            <p class="tl__org"><span class="he">תשתיות ענן בקנה מידה גדול</span><span class="en" lang="en">Large-scale cloud infrastructure</span></p>
+            <p class="tl__text">
+              <span class="he">אחריות על תשתית הענן של הארגון, ניהול אשכולות Kubernetes כקוד וליווי צוותי פיתוח בדרך לפרודקשן.</span>
+              <span class="en" lang="en">Responsible for the organization's cloud infrastructure, managing Kubernetes clusters as code and guiding development teams on their way to production.</span>
+            </p>
+          </li>
+
+          <li class="tl__item">
+            <span class="tl__dot" aria-hidden="true"></span>
+            <span class="tl__year" dir="ltr">2025 – <span class="he">היום</span><span class="en" lang="en">Present</span></span>
+            <h3 class="tl__title">
+              <span class="he">התמחות בלמידה עמוקה</span>
+              <span class="en" lang="en">Deep-learning specialization</span>
+            </h3>
+            <p class="tl__org"><span class="he">לימודים ופרויקטים אישיים</span><span class="en" lang="en">Coursework and personal projects</span></p>
+            <p class="tl__text">
+              <span class="he">קורסים מתקדמים ברשתות נוירונים וראייה ממוחשבת, ופרויקט MLOps שמחבר בין התחום לעולם התשתיות שאני מגיע ממנו.</span>
+              <span class="en" lang="en">Advanced courses in neural networks and computer vision, plus an MLOps project that bridges the field with the infrastructure world I come from.</span>
+            </p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== יצירת קשר ===================== -->
+    <section class="section reveal" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="section__kicker"><span class="he">05 · נשמח לדבר</span><span class="en" lang="en">05 · Let's talk</span></p>
+        <h2 class="section__title" id="contact-title">
+          <span class="he">יצירת קשר</span><span class="en" lang="en">Get in touch</span>
+        </h2>
+        <p class="section__lead">
+          <span class="he">מחפש מפתח שמבין גם בתשתיות וגם במודלים? אשמח לשמוע — זמין למשרה, להתמחות או לשיחה טובה.</span>
+          <span class="en" lang="en">Looking for a developer who understands both infrastructure and models? I'd love to hear from you — available for a role, an internship or a good conversation.</span>
+        </p>
+
+        <address class="contact">
+
+          <a class="card contact__card" href="mailto:michael@notreal.com">
+            <span class="contact__icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"></use></svg></span>
+            <span class="contact__label"><span class="he">דואר אלקטרוני</span><span class="en" lang="en">Email</span></span>
+            <span class="contact__value" dir="ltr">michael@notreal.com</span>
+          </a>
+
+          <a class="card contact__card" href="tel:+972501234567">
+            <span class="contact__icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"></use></svg></span>
+            <span class="contact__label"><span class="he">טלפון</span><span class="en" lang="en">Phone</span></span>
+            <span class="contact__value" dir="ltr">050-123-4567</span>
+          </a>
+
+          <a class="card contact__card" href="https://github.com/michael-attias123" target="_blank" rel="noopener noreferrer me">
+            <span class="contact__icon" aria-hidden="true"><svg class="icon"><use href="#i-github"></use></svg></span>
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value" dir="ltr">michael-attias123</span>
+            <span class="sr-only he">(נפתח בלשונית חדשה)</span><span class="sr-only en" lang="en">(opens in a new tab)</span>
+          </a>
+
+          <a class="card contact__card" href="https://www.linkedin.com/in/michael-attias" target="_blank" rel="noopener noreferrer me">
+            <span class="contact__icon" aria-hidden="true"><svg class="icon"><use href="#i-linkedin"></use></svg></span>
+            <span class="contact__label">LinkedIn</span>
+            <span class="contact__value" dir="ltr">in/michael-attias</span>
+            <span class="sr-only he">(נפתח בלשונית חדשה)</span><span class="sr-only en" lang="en">(opens in a new tab)</span>
+          </a>
+
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== כותרת תחתונה ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        <span dir="ltr">© 2026</span>
+        <span class="he">מיכאל אטיאס · כל הזכויות שמורות</span>
+        <span class="en" lang="en">Michael Attias · All rights reserved</span>
+      </p>
+      <p class="footer__built">
+        <svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg>
+        <span class="he">נבנה ב-HTML ו-CSS בלבד, ללא JavaScript</span>
+        <span class="en" lang="en">Built with HTML &amp; CSS only, no JavaScript</span>
+      </p>
+      <p class="footer__top">
+        <a class="totop" href="#top">
+          <svg class="icon" aria-hidden="true"><use href="#i-up"></use></svg>
+          <span class="he">חזרה למעלה</span><span class="en" lang="en">Back to top</span>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
